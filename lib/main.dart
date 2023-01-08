@@ -12,63 +12,54 @@ class MyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.teal,
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const CircleAvatar(
-              radius: 50,
-              backgroundImage:
-                  NetworkImage('https://avatars.githubusercontent.com/caions'),
-            ),
-            const Text(
-              'Caio Nascimento',
-              style: TextStyle(
-                  color: Colors.white, fontSize: 22, fontFamily: 'Pacifico'),
-            ),
-            Text('Fullstack Javascript Developer',
-                style: TextStyle(
-                    color: Colors.white.withOpacity(0.8),
-                    fontSize: 16,
-                    fontFamily: 'BebasNeue')),
-            Center(
-              child: Container(
-                margin: const EdgeInsets.only(top: 10, bottom: 10),
-                color: Colors.white.withOpacity(0.3),
-                width: 100,
-                height: 1,
+      home: SafeArea(
+        child: Scaffold(
+          backgroundColor: Colors.teal,
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const CircleAvatar(
+                radius: 50,
+                backgroundImage: NetworkImage(
+                    'https://avatars.githubusercontent.com/caions'),
               ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(top: 10, bottom: 10),
-              child: TextField(
-                readOnly: true,
-                decoration: InputDecoration(
-                  labelStyle: const TextStyle(color: Colors.teal),
-                  prefixIconConstraints: const BoxConstraints(minWidth: 70),
-                  constraints:
-                      const BoxConstraints(maxWidth: 350, maxHeight: 50),
-                  labelText: '+55 (85) 98605-5270',
-                  filled: true,
-                  fillColor: Colors.white,
-                  prefixIcon: phoneIcon,
+              const Text(
+                'Caio Nascimento',
+                style: TextStyle(
+                    color: Colors.white, fontSize: 22, fontFamily: 'Pacifico'),
+              ),
+              Text('Fullstack Javascript Developer',
+                  style: TextStyle(
+                      color: Colors.white.withOpacity(0.8),
+                      fontSize: 16,
+                      fontFamily: 'BebasNeue')),
+              SizedBox(
+                height: 20.0,
+                width: 150.0,
+                child: Divider(
+                  color: Colors.teal.shade100,
                 ),
               ),
-            ),
-            TextField(
-              readOnly: true,
-              decoration: InputDecoration(
-                labelStyle: const TextStyle(color: Colors.teal),
-                prefixIconConstraints: const BoxConstraints(minWidth: 70),
-                constraints: const BoxConstraints(maxWidth: 350, maxHeight: 50),
-                labelText: 'caionsantos2000@gmail.com',
-                filled: true,
-                fillColor: Colors.white,
-                prefixIcon: mailIcon,
+              Card(
+                margin:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+                child: ListTile(
+                  leading: phoneIcon,
+                  textColor: Colors.teal,
+                  title: const Text('+55 (85) 98605-5270'),
+                ),
               ),
-            ),
-          ],
+              Card(
+                margin:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+                child: ListTile(
+                  leading: mailIcon,
+                  textColor: Colors.teal,
+                  title: const Text('caionsantos2000@gmail.com'),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
