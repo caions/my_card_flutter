@@ -46,6 +46,7 @@ class MyCard extends StatelessWidget {
                 readOnly: true,
                 decoration: InputDecoration(
                   labelStyle: const TextStyle(color: Colors.teal),
+                  prefixIconConstraints: const BoxConstraints(minWidth: 70),
                   constraints:
                       const BoxConstraints(maxWidth: 350, maxHeight: 50),
                   labelText: '+55 (85) 98605-5270',
@@ -59,6 +60,7 @@ class MyCard extends StatelessWidget {
               readOnly: true,
               decoration: InputDecoration(
                 labelStyle: const TextStyle(color: Colors.teal),
+                prefixIconConstraints: const BoxConstraints(minWidth: 70),
                 constraints: const BoxConstraints(maxWidth: 350, maxHeight: 50),
                 labelText: 'caionsantos2000@gmail.com',
                 filled: true,
